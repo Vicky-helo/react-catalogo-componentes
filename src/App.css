@@ -4,113 +4,703 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  color: #222;
+html {
+  background: #06111d;
 }
+
+body {
+  min-height: 100vh;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: #15283a;
+
+  background-color: #06111d;
+
+  background-image:
+    radial-gradient(circle, rgba(100, 170, 220, 0.45) 1px, transparent 2px),
+    radial-gradient(circle, rgba(180, 220, 245, 0.25) 1px, transparent 2px);
+
+  background-size: 32px 32px, 48px 48px;
+}
+
+
+/* ==================================================
+   DETALHES DO FUNDO
+================================================== */
+
+body::before {
+  content:
+    "✦  ♱  ⋆˚꩜｡  ✦  ♱  ⋆˚꩜｡  ✦  ♱  ⋆˚꩜｡  ✦  ♱  ⋆˚꩜｡  ✦";
+  
+  position: fixed;
+  inset: 0;
+
+  color: rgba(116, 180, 220, 0.16);
+  font-size: 22px;
+  letter-spacing: 30px;
+  line-height: 75px;
+
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+body::after {
+  content:
+    "‿̩͙⊱༒︎༻♱༺༒︎⊰‿̩͙     ⫘⫘⫘⫘⫘⫘     ⋆｡‧₊°♱༺𓆩❦︎𓆪༻♱༉‧₊˚.";
+
+  display: block;
+
+  width: 90%;
+  max-width: 1050px;
+
+  margin: 18px auto;
+
+  text-align: center;
+
+  color: #6698b9;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+
+/* ==================================================
+   CABEÇALHO = BARRA DO NAVEGADOR
+================================================== */
 
 .cabecalho {
-  background-color: #4b2e83;
-  color: white;
+  position: relative;
+
+  width: 90%;
+  max-width: 1050px;
+
+  margin: 10px auto 0;
+
+  padding: 105px 35px 35px;
+
+  background:
+    linear-gradient(
+      rgba(12, 30, 46, 0.35),
+      rgba(12, 30, 46, 0.35)
+    ),
+    #dcebf4;
+
+  border: 4px solid #7ca8c3;
+  border-bottom: none;
+
+  border-radius: 28px 28px 0 0;
+
+  box-shadow:
+    0 0 0 3px #18384e,
+    0 0 30px rgba(66, 137, 181, 0.35);
+
   text-align: center;
-  padding: 40px 20px;
 }
 
+
+/* barra superior falsa */
+
+.cabecalho::before {
+  content:
+    "● ● ●        ⚿  https://www.catalogo-cursos.com                         1:25 PM";
+
+  position: absolute;
+
+  top: 13px;
+  left: 18px;
+  right: 18px;
+
+  height: 43px;
+
+  padding: 12px 18px;
+
+  background: #8ca9b9;
+
+  border-radius: 20px;
+
+  color: #eef8ff;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+
+  text-align: left;
+
+  box-shadow:
+    inset 0 -2px rgba(0, 0, 0, 0.12);
+}
+
+
+/* menu falso */
+
+.cabecalho::after {
+  content:
+    "Profile     Courses     Wishlist     Others                         ♡  ♡  ♡  ♡";
+
+  position: absolute;
+
+  top: 65px;
+  left: 0;
+  right: 0;
+
+  padding: 9px 25px;
+
+  background: #c5d8e4;
+
+  border-top: 1px solid #9bb7c8;
+  border-bottom: 1px solid #9bb7c8;
+
+  color: #39566b;
+
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 13px;
+
+  text-align: left;
+
+  text-decoration: underline;
+}
+
+
+/* ==================================================
+   TÍTULO DENTRO DA ÁREA PRINCIPAL
+================================================== */
+
 .cabecalho h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+  position: relative;
+
+  display: inline-block;
+
+  padding: 9px 22px;
+
+  background: #b8d7e8;
+
+  border: 2px solid #7ca8c3;
+  border-radius: 18px;
+
+  color: #17364c;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 31px;
+  font-weight: normal;
+
+  text-shadow: 1px 1px #edf8ff;
+
+  box-shadow:
+    3px 3px 0 rgba(33, 72, 96, 0.35);
+}
+
+.cabecalho h1::before {
+  content: "⋆. 𐙚˚࿔ 𝐧𝐚𝐦𝐞 𝜗𝜚˚⋆";
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #507a94;
+  font-size: 11px;
 }
 
 .cabecalho p {
-  font-size: 18px;
+  margin-top: 16px;
+
+  color: #4e687a;
+
+  font-size: 14px;
+  font-style: italic;
+
+  letter-spacing: 0.5px;
 }
+
+
+/* ==================================================
+   ÁREA PRINCIPAL
+================================================== */
 
 main {
+  position: relative;
+
   width: 90%;
-  max-width: 1100px;
-  margin: 40px auto;
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  padding: 35px 35px 50px;
+
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(111, 173, 211, 0.20) 0 3px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(77, 139, 177, 0.15) 0 3px,
+      transparent 4px
+    ),
+    #e7f2f7;
+
+  background-size: 27px 27px, 35px 35px;
+
+  border-left: 4px solid #7ca8c3;
+  border-right: 4px solid #7ca8c3;
+
+  box-shadow:
+    0 0 0 3px #18384e;
 }
 
-.cursos h2,
-.destaques > h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #4b2e83;
+
+/* ==================================================
+   TÍTULO DOS CURSOS
+================================================== */
+
+.cursos > h2 {
+  width: fit-content;
+
+  margin: 0 auto 28px;
+
+  padding: 8px 25px;
+
+  background: #c4deeb;
+
+  border: 2px solid #83aac1;
+
+  border-radius: 20px;
+
+  color: #294b61;
+
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: normal;
+
+  box-shadow: 2px 3px 0 rgba(48, 86, 108, 0.25);
 }
+
+.cursos > h2::before {
+  content: "𓊆ྀི❤︎𓊇ྀི ";
+  color: #5485a1;
+}
+
+.cursos > h2::after {
+  content: " ♱";
+  color: #5485a1;
+}
+
+
+/* ==================================================
+   CARDS DOS CURSOS
+================================================== */
 
 .lista-cursos {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+
+  gap: 18px;
 }
+
+
+/* card */
 
 .card-curso {
-  background-color: white;
-  border-radius: 10px;
-  padding: 22px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  position: relative;
+
+  min-height: 215px;
+
+  padding: 24px 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.75),
+      rgba(201, 224, 237, 0.85)
+    );
+
+  border: 2px solid #91b5c9;
+
+  border-radius: 13px;
+
+  box-shadow:
+    4px 4px 0 #5c8097,
+    inset 0 0 15px rgba(255, 255, 255, 0.7);
+
+  transition: 0.25s;
 }
+
+
+/* decoração */
+
+.card-curso::before {
+  content: "♱ 𓂃 ࣪˖ ִֶ♱ ྀིྀ";
+
+  position: absolute;
+
+  top: 7px;
+  right: 10px;
+
+  color: #6c9bb5;
+
+  font-size: 12px;
+}
+
+.card-curso::after {
+  content: "⫘⫘⫘";
+
+  position: absolute;
+
+  bottom: 7px;
+  left: 12px;
+
+  color: #789caf;
+
+  font-size: 10px;
+}
+
+
+/* hover */
+
+.card-curso:hover {
+  transform: translateY(-5px) rotate(-0.5deg);
+
+  box-shadow:
+    5px 7px 0 #426a82,
+    0 0 18px rgba(78, 145, 184, 0.35);
+}
+
+
+/* nome */
 
 .card-curso h2 {
-  color: #4b2e83;
   margin-bottom: 18px;
-  font-size: 22px;
+
+  padding: 7px 10px;
+
+  background: #b8d7e7;
+
+  border-radius: 14px;
+
+  color: #23465d;
+
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: normal;
+
+  text-align: center;
+
+  border: 1px solid #8aaec3;
 }
 
+.card-curso h2::before {
+  content: "♡ ";
+  color: #4f809d;
+}
+
+
+/* informações */
+
 .card-curso p {
-  margin-bottom: 10px;
+  margin-bottom: 9px;
+
+  color: #536f80;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+}
+
+.card-curso strong {
+  color: #294c62;
+}
+
+
+/* ==================================================
+   VAGAS
+================================================== */
+
+.vagas,
+.completa {
+  margin-top: 16px !important;
+
+  padding: 7px 10px;
+
+  border-radius: 12px;
+
+  font-size: 12px !important;
+
+  text-align: center;
+
+  font-weight: bold;
 }
 
 .vagas {
-  color: green;
-  font-weight: bold;
-  margin-top: 15px;
+  background: #c3e0ee;
+
+  border: 1px solid #79a9c3;
+
+  color: #24526c !important;
+}
+
+.vagas::before {
+  content: "✧ ";
 }
 
 .completa {
-  color: #c62828;
-  font-weight: bold;
-  margin-top: 15px;
+  background: #c9d3d9;
+
+  border: 1px solid #8a9ba5;
+
+  color: #4d5c64 !important;
 }
 
-.destaques {
-  margin-top: 50px;
+.completa::before {
+  content: "☾ ";
 }
+
+
+/* ==================================================
+   DESTAQUES
+================================================== */
+
+.destaques {
+  margin-top: 45px;
+}
+
+
+/* título */
+
+.destaques > h2 {
+  width: fit-content;
+
+  margin: 0 auto 25px;
+
+  color: #34566b;
+
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: normal;
+
+  text-align: center;
+}
+
+.destaques > h2::before {
+  content:
+    "⋆｡‧₊°♱༺𓆩❦︎𓆪༻♱༉‧₊˚.";
+
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #6d9ab2;
+
+  font-size: 12px;
+}
+
+.destaques > h2::after {
+  content:
+    "°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･";
+
+  display: block;
+
+  margin-top: 6px;
+
+  color: #6d9ab2;
+
+  font-size: 11px;
+}
+
+
+/* destaques */
 
 .lista-destaques {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+
+  gap: 18px;
 }
 
 .destaque {
-  background-color: #e8ddf7;
-  padding: 25px;
-  border-radius: 10px;
+  position: relative;
+
+  padding: 23px 20px;
+
+  min-height: 150px;
+
+  background: #d6e8f1;
+
+  border: 2px dashed #82a9bd;
+
+  border-radius: 12px;
+
   text-align: center;
+
+  box-shadow:
+    3px 3px 0 #7394a8;
+}
+
+.destaque::before {
+  content: "ﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـ";
+
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #6c9ab3;
+
+  font-size: 11px;
 }
 
 .destaque h2 {
-  color: #4b2e83;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+
+  color: #31566d;
+
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: normal;
 }
+
+.destaque p {
+  color: #607989;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* ==================================================
+   RODAPÉ
+================================================== */
 
 .rodape {
-  background-color: #222;
-  color: white;
+  position: relative;
+
+  width: 90%;
+  max-width: 1050px;
+
+  margin: 0 auto 20px;
+
+  padding: 30px 20px;
+
+  background: #c4dce8;
+
+  border: 4px solid #7ca8c3;
+  border-top: none;
+
+  border-radius: 0 0 28px 28px;
+
   text-align: center;
-  padding: 25px;
-  margin-top: 50px;
+
+  box-shadow:
+    0 0 0 3px #18384e,
+    0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
-@media (max-width: 800px) {
+.rodape::before {
+  content:
+    "ᡕᠵデᡁ᠊╾━    ✞︎𝖛𝖆𝖒𝖕𝖎𝖗𝖊✞︎    ᡕᠵデᡁ᠊╾━";
+
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #547e96;
+
+  font-size: 12px;
+}
+
+.rodape::after {
+  content:
+    "ℳ𝑦 ℒ𖹭𝑣𝑒     𝔅𝔦𝔱𝔢 𝔐𝔢     𝔳𝔞𝔪𝔭⛦𝔤𝔦𝔯𝔩";
+
+  display: block;
+
+  margin-top: 12px;
+
+  color: #668da4;
+
+  font-size: 11px;
+}
+
+.rodape p {
+  color: #36566b;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+}
+
+
+/* ==================================================
+   RESPONSIVO
+================================================== */
+
+@media (max-width: 850px) {
+
+  .lista-cursos,
+  .lista-destaques {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cabecalho h1 {
+    font-size: 28px;
+  }
+
+  .cabecalho::before {
+    font-size: 11px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  body::after {
+    font-size: 10px;
+  }
+
+  .cabecalho,
+  main,
+  .rodape {
+    width: 94%;
+  }
+
+  .cabecalho {
+    padding: 105px 18px 30px;
+  }
+
+  .cabecalho::before {
+    content:
+      "● ● ●     ⚿  https://catalogo.com";
+    font-size: 10px;
+  }
+
+  .cabecalho::after {
+    content:
+      "Profile     Courses     Others     ♡ ♡ ♡";
+
+    font-size: 10px;
+  }
+
+  .cabecalho h1 {
+    font-size: 25px;
+  }
+
+  .cabecalho p {
+    font-size: 12px;
+  }
+
+  main {
+    padding: 30px 15px 40px;
+  }
+
   .lista-cursos,
   .lista-destaques {
     grid-template-columns: 1fr;
   }
 
-  .cabecalho h1 {
-    font-size: 28px;
+  .cursos > h2,
+  .destaques > h2 {
+    font-size: 20px;
+  }
+
+  .card-curso {
+    min-height: 190px;
   }
 }
